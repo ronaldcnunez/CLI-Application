@@ -12,7 +12,19 @@ end
 def find_products
   puts "Please enter a product keyword"
   keyword=gets.chomp
-  puts "The restof this feature has not been implemented yet. Stay tuned."
+  puts "The rest of this feature has not been implemented yet. Stay tuned."
+end
+
+def offer_prev_cust_next_choice
+  puts "Would you like to shop or end your session?"
+  puts "Type 's' to shop or 'e' to end session"
+  answer=gets.chomp
+  if answer=='s'
+  find_products
+else
+  puts "Thanks for stopping by!"
+end
+
 end
 
   def find_or_create_customer
@@ -29,11 +41,16 @@ end
     end
       direction=gets.chomp
       if direction == "p"
-      puts customer.invoices[0].product
+        invoice_num=1
+        customer.invoices.each do |inv|
+          puts "Invoice ##{invoice_num}. Name: #{inv.customer.name}, Product: #{inv.product.name}, Price: $#{inv.product.price} Quantity: #{inv.quantity}"
+          invoice_num+=1
+      end
       elsif direction == "s"
         find_products
       else
         invalid_command
         find_products
     end
-  end
+    offer_prev_cust_next_choice
+end
