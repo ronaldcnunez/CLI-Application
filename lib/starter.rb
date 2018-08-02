@@ -96,7 +96,7 @@ end
 
 
 def continue_shopping_statement
-  puts "Would you like to keep shopping or checkout? Enter y for yes or n to checkout"
+  puts "Would you like to keep shopping? Enter y for yes or n to checkout"
   response=gets.chomp
   if response=='y'
     return_results
@@ -123,7 +123,7 @@ def exit2
 
 
 def exit1
-puts   "peace out"
+puts " Thanks for stopping by bro, your total is total price "
 end
 
 def follow_up
@@ -185,6 +185,9 @@ end
     puts $invoice
     end
 
+def total_price
+  $cart_price.reduce(:+)
+end
 
 def find_or_create_customer
   welcome
