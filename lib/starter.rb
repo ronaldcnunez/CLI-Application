@@ -101,16 +101,29 @@ def continue_shopping_statement
   if response=='y'
     return_results
   elsif response == 'n'
-    show_invoice
+    exit1
   else
     invalid_command
 end
 end
 
+def exit2
+  puts "Do you want to keep shopping or are you trying to leave? enter 'y' for more shopping or enter 'n' to leave"
+    answer = gets.chomp
+    if answer == 'y'
+      return_results
+    elsif answer == 'n'
+      show_invoice
+    else
+      invalid_command
+    end
+  end
+
+
 
 
 def exit1
-  "Be easy my boy"
+puts   "peace out"
 end
 
 def follow_up
@@ -137,7 +150,6 @@ def get_results_from_api(cust_input_word)
 end
 
 def continue_shopping
-  continue_shopping_statement
   return_results
 end
 
@@ -162,6 +174,7 @@ end
     def add_cart
       puts "Would you like to add to cart? press 'y' for yes and 'n' for no"
     end
+
     def adds_to_cart
      $cart_price.reduce(:+).round(2)
     end
@@ -170,8 +183,7 @@ end
     def invoice
     $invoice = $cart.zip $cart_price
     puts $invoice
-    puts exit1
-  end
+    end
 
 
 def find_or_create_customer
@@ -208,11 +220,11 @@ add_cart
 answer = get_user_input
 if answer == "y"
   adds_to_cart
-  show_invoice && continue_shopping
+  invoice
+   continue_shopping_statement
 elsif answer == "n"
   adds_to_cart
   invoice
-  exit1
 else
     invalid_command
 end
