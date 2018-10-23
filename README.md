@@ -1,7 +1,7 @@
 # Module One Project - Command Line Application 
 
 ## Description 
-We have built a CLI discount store that allows a user to search for items, add those items to a cart and checkout that returns the items they have purchased and their total. This app built using Rails and fetchs items marked on sale avaiable in Walmart's online inventory based on the product. First time users are greeted with a welcome message while previous users are recoginzed with a warm returning message.  
+We have built a CLI discount store using Ruby that allows a user to search for items, add those items to a cart and checkout that returns the items they have purchased and their total. This app fetches discounted items available in Wal-Mart's online inventory based on the user's input. First time users are greeted with a welcome message and previous users are welcomed with a returning message. 
 
 ## Instructions 
 1. Fork and clone this repository
