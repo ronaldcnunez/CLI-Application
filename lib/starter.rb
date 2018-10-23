@@ -19,7 +19,7 @@ def invalid_command
 end
 
 def prompt_for_keyword
-  puts "Please enter a product keyword"
+  puts "Please enter a product keyword to find the best deals on all your favorite goods"
 end
 
 def prompt_for_specific
@@ -102,7 +102,7 @@ def find_or_create_customer
       customer = Customer.find_by(name: name) #assigns search to variable
         if customer == nil
           customer = Customer.create(name: name) # creates customer if not found
-            puts "We've created a customer account for you. Let's go shopping!!"
+            puts " Hello #{customer.name}! We've created a customer account for you. Let's go shopping!!"
               return_results
         else
           puts "We're glad to see you back!"
@@ -151,16 +151,4 @@ prompt_for_keyword
                 add_cart
                   answer = get_user_input
                     answer_response(answer)
-                  # when answer =="y"
-                  #   adds_to_cart
-                  #     invoice
-                  #     keep_shopping
-                  # when answer == "n"
-                  #   return_results
-                  # else
-                  #   invalid_command
-                  #     add_cart
-                  #     answer = get_user_input
-                  #
-                  # end
 end
