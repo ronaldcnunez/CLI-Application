@@ -1,4 +1,4 @@
 class Invoice < ActiveRecord::Base
-  belongs_to :product
-  belongs_to :customer
+  belongs_to :products
+  belongs_to :customers
 end
